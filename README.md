@@ -1,0 +1,1 @@
+The purpose of this app is to contribute to record gathering of individuals associated in a group.
