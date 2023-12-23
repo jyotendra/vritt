@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "fb-serve": "npm run start:dev && firebase emulators:start --only functions",
+    "fb-serve": "concurrently 'npm:start:dev' 'firebase emulators:start --only functions'",
     "fb-shell": "npm run build && firebase functions:shell",
     "fb-start": "npm run shell",
     "fb-deploy": "firebase deploy --only functions"
@@ -46,6 +46,7 @@
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
